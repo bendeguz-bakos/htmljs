@@ -7,9 +7,21 @@
 </head>
 <body>
     <div>
-        <input type="text" class="termek" placeholder="kifli">
-        <input type="number" class="darab" placeholder="2">
-        <input type="number" class="ar" placeholder="20ft">
+        <input type="text" class="termek1" placeholder="pl :kifli">
+        <input type="number" class="darab1" placeholder="pl :2">
+        <input type="number" class="ar1" placeholder="pl :20ft">
+        <br>
+        <input type="text" class="termek2" placeholder="pl :kifli">
+        <input type="number" class="darab2" placeholder="pl :2">
+        <input type="number" class="ar2" placeholder="pl :20ft">
+        <br>
+        <input type="text" class="termek3" placeholder="pl :kifli">
+        <input type="number" class="darab3" placeholder="pl :2">
+        <input type="number" class="ar3" placeholder="pl :20ft">
+        <br>
+        <input type="text" class="termek4" placeholder="pl :kifli">
+        <input type="number" class="darab4" placeholder="pl :2">
+        <input type="number" class="ar4" placeholder="pl :20ft">
         <br>
         <button onclick="done()">gomb?</button>
     </div>
@@ -19,19 +31,34 @@
 
     <script>
         function done(){
-            const termek = document.querySelector('.termek').value
-            const db = document.querySelector('.darab').value
-            const ar = document.querySelector('.ar').value
-            console.log(typeof(termek))
-            console.log(typeof(Number(db)))
-            console.log(typeof(Number(ar)))
-            const egy =5
-            const ketto =5
-            console.log(String(egy)+String(ketto))
-            //console.log(Number(egy) * Number(ketto))
-            alert
-            const vegAr = db*ar
-            alert(`${db}darab ${termek} ${vegAr}ft-ba kerül `)
+            /*const termek1 = document.querySelector('.termek1').value
+            const db1 = document.querySelector('.darab1').value
+            const ar1 = document.querySelector('.ar1').value
+            const termek2 = document.querySelector('.termek2').value
+            const db2 = document.querySelector('.darab2').value
+            const ar2 = document.querySelector('.ar2').value
+            const termek3 = document.querySelector('.termek3').value
+            const db3 = document.querySelector('.darab3').value
+            const ar3 = document.querySelector('.ar3').value
+            const termek4 = document.querySelector('.termek4').value
+            const db4 = document.querySelector('.darab4').value
+            const ar4 = document.querySelector('.ar4').value
+            const debug = document.querySelector('.termek').value
+            alert(debug)*/
+        /*
+            const vegAr1 = db1*ar1
+            alert(`${db1}darab ${termek1} ${vegAr1}ft-ba kerül `)
+            const vegAr2 = db2*ar2
+            alert(`${db2}darab ${termek2} ${vegAr2}ft-ba kerül `)
+            const vegAr3 = db3*ar3
+            alert(`${db3}darab ${termek3} ${vegAr3}ft-ba kerül `)
+            const vegAr4 = db4*ar4
+            alert(`${db4}darab ${termek4} ${vegAr4}ft-ba kerül `)
+            const deltaar = vegAr1 + vegAr2 + vegAr3 + vegAr4
+            alert(`ez mind ${deltaar}ft-ba került`)*/
+            const termek = {1:termek1,2:termek2,3:termek3,4:termek4}
+            const db = {1:db1,2:db2,3:db3,4:db4}
+            const ar = {1:ar1,2:ar2,3:ar3,4:ar4}
         }
     
         
