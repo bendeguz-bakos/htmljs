@@ -6,17 +6,34 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" class="bevitelimezo">
+    <div>
+        <input type="text" class="termek" placeholder="kifli">
+        <input type="number" class="darab" placeholder="2">
+        <input type="number" class="ar" placeholder="20ft">
+        <br>
+        <button onclick="done()">gomb?</button>
+    </div>
+    
     <p class="szoveg">sad</p>
-    <button onclick="lioolvas()">gomb?</button>
+    
 
     <script>
-    function lioolvas(){
-
-        const szoveg = document.querySelector('.bevitelimezo').value;
-        
-        console.log(typeof(szoveg));
-    }
+        function done(){
+            const termek = document.querySelector('.termek').value
+            const db = document.querySelector('.darab').value
+            const ar = document.querySelector('.ar').value
+            console.log(typeof(termek))
+            console.log(typeof(Number(db)))
+            console.log(typeof(Number(ar)))
+            const egy =5
+            const ketto =5
+            console.log(String(egy)+String(ketto))
+            //console.log(Number(egy) * Number(ketto))
+            alert
+            const vegAr = db*ar
+            alert(`${db}darab ${termek} ${vegAr}ft-ba kerül `)
+        }
+    
         
     
     </script>
