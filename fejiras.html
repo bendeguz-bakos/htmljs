@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="fejiras('fej')">FEJ</button>
+    <button onclick="fejiras('iras')">IRÁS</button>
+
+    <script>
+        function fejiras(PlayerChoice){
+        const value = Math.random();
+        let CPUChoice = "";
+        if(value < 1/2){
+            CPUChoice = "fej";
+        }
+        else if(value > 1/2){
+            CPUChoice = "iras"; 
+        }
+        let eredmeny = "";
+        if(PlayerChoice === CPUChoice){
+            eredmeny = "nyereség";
+            console.log("nyert")
+        }
+        else if(PlayerChoice !== CPUChoice){
+            eredmeny = "vereség";
+            console.log("vesztett")
+        }
+        alert(`a játékos ${PlayerChoice}-t választott az eredmény;${eredmeny}`)
+        }
+    </script>
+</body>
+</html>

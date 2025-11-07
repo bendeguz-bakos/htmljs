@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="console.log('hello')">Gomb</button>
+    <button onclick="koPapirOllo('ko')">Kő</button>
+    <button onclick="koPapirOllo('papir')">Papír</button>
+    <button onclick="koPapirOllo('ollo')">Olló</button>
+    <hr>
+    <script>
+        function koPapirOllo(gomb_neve){
+            const szam = Math.random();
+            let gepValasztas = '';
+            if(szam < 1/3){
+                gepValasztas = "ko";
+            }
+            else if(szam >= 1/3 && szam < 2/3){
+                gepValasztas = 'papir';
+            }
+            else{
+                gepValasztas ='ollo'; 
+            }
+            console.log(szam);
+            console.log(gepValasztas);
+            //alert(szam);
+            //alert(gepValasztas);
+
+            let eredmeny = "";
+
+            if(gomb_neve === "ko"){
+                if(gepValasztas === "ko"){
+                    eredmeny = "Döntetlen";
+                }
+                else if(gepValasztas === "papir"){
+                    eredmeny = "Vereség";
+                }
+                else if(gepValasztas == "ollo"){
+                    eredmeny = "Nyereség";
+                }
+            }
+            else if(gomb_neve === "papir"){
+                if(gepValasztas === "ko"){
+                    eredmeny = "Nyereség";
+                }
+                else if(gepValasztas === "papir"){
+                    eredmeny = "Döntetlen";
+                }
+                else if(gepValasztas == "ollo"){
+                    eredmeny = "Vereség";
+                }
+            }
+            else if(gomb_neve === "ollo"){
+                if(gepValasztas === "ko"){
+                    eredmeny = "Vereség";
+                }
+                else if(gepValasztas === "papir"){
+                    eredmeny = "Nyereség";
+                }
+                else if(gepValasztas == "ollo"){
+                    eredmeny = "Döntetlen";
+                }
+            }
+            alert(`a felhasználó ${gomb_neve}
+            a gép döntése ${gepValasztas}
+            az eredmény:${eredmeny}`);
+            console.log(`a felhasználó ${gomb_neve}
+            a gép döntése ${gepValasztas}
+            az eredmény:${eredmeny}`);
+        }   
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kő-papír-olló</title>
+</head>
+<body>
+    <button onclick="jatek('ko')">kő</button>
+    <button onclick="jatek('papir')">papír</button>
+    <button onclick="jatek('ollo')">olló</button>
+    <p>Győzelmek száma:<b id="gyoz"></b></p>
+    <p>Vereségek száma:<b id="ver"></b></p>
+    <p>Döntetlenek száma:<b id="dont"></b></p>
+
+
+    <p>Készítette: BAKOS BENDEGÚZ 10.F</p>
+
+<script>  
+    let eredmeny
+    let gyoz =0
+    let ver =0
+    let dont =0
+    let GepValasztas
+    function jatek(FelhasznaloValasztasa){
+        const random = Math.random()
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        if (random <= 1/3){
+            GepValasztas = 'ko'
+        }
+        else if (random <= 2/3){
+            GepValasztas = 'papir'
+        }
+        else{
+            GepValasztas = 'ollo'
+        }
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        if (GepValasztas === 'ko'){
+            if (FelhasznaloValasztasa === 'ko'){
+                dont+=1
+                eredmeny = 'Döntetlen'
+            }
+            else if (FelhasznaloValasztasa === 'papir'){
+                gyoz+=1
+                eredmeny = 'Gyözelem'
+            }
+            else {
+                ver+=1
+                eredmeny = 'Vereség'
+            }
+        }
+        else if(GepValasztas === 'papir'){
+            if (FelhasznaloValasztasa === 'ko'){
+                ver+=1
+                eredmeny = 'Vereség'
+            }
+            else if (FelhasznaloValasztasa === 'papir'){
+                dont+=1
+                eredmeny = 'Döntetlen'
+            }
+            else {
+                gyoz+=1
+                eredmeny = 'Gyözelem'
+            }
+        }
+        else{
+            if (FelhasznaloValasztasa === 'ko'){
+                gyoz+=1
+                eredmeny = 'Gyözelem'
+            }
+            else if (FelhasznaloValasztasa === 'papir'){
+                ver+=1
+                eredmeny = 'Vereség'
+            }
+            else {
+                dont+=1
+                eredmeny = 'Döntetlen'
+            }
+        }
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        alert(`        a játékos választása:${FelhasznaloValasztasa}\n
+        a gép választása:${GepValasztas}\n
+        eredmény:${eredmeny}\n
+        pontok:
+        gyözelem:${gyoz}
+        vereség:${ver}
+        döntetlen:${dont}`)
+    }
+</script>
+</body>
+</html>
