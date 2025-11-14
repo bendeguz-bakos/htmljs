@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Fogyasztás számító</h1>
+<label for="km">hány kmert halattál</label>
+<label for="lpkm">mennyi az autod fogyasztása</label>
+<label for="ftpl">Mennyi egy liter üzem anyag liter ára</label>
+<label for="autop">Használtél autópályát?</label></br>
+<input type="number" placeholder="Ft/liter" name="ftpl" id="ftpl"><br>
+<input type="number" placeholder="L/100Km" name="lpkm" id="lpkm"> <br>
+<input type="number" placeholder="KM" name="km" id="km" ><br>
+<input type="text" name="autop" id="autop" ><br>
+<div id="vmo"></div>
+
+<button onclick="mehet()">Mehet!!!</button>
+<script>
+    
+
+    function mehet(){
+        const ertek = document.querySelector("#ftpl").value;
+        const ertek2 = document.querySelector("#lpkm").value/100;
+        const erte3 = document.querySelector("#km").value;
+        const atalakit3 = document.querySelector("#autop").value;
+        
+        
+        
+        
+
+        //képlet :( út * fogyasztáa) * benzinár +autopékyas
+        let fogyasztaskm = erte3*ertek2
+        let mindegyütt = fogyasztaskm * ertek
+        let vegar = mindegyütt 
+        if(atalakit3 == "igen"){
+            vegar=vegar+11990
+        }
+        console.log(vegar)
+        
+        document.querySelector("#vmo").innerHTML = vegar 
+         }
+
+
+    
+</script>
+
+</body>
+</html>
