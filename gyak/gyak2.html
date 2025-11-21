@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="pelda">pelda:</label>
+    <input type="text" name="pelda" id="pelda" placeholder="pelda">
+    <input type="text" name="pelda2" id="pelda2" placeholder="pelda2">
+    <button onclick="onClick()">asd</button><br>
+    <div class="eredmeny">asd </div>
+
+    <script>
+        function onClick(){
+            const pelda=document.querySelector("#pelda").value;
+            const pelda2=document.querySelector("#pelda2").value;
+            console.log(pelda == '' && pelda2 == '');
+            if (pelda == '' && pelda2 == ''){
+                document.querySelector(".eredmeny").innerHTML="egyik be sincs semmi"
+            }
+            else{
+                document.querySelector(".eredmeny").innerHTML="irt valamit"
+            }
+        }
+    </script>
+</body>
+</html>
