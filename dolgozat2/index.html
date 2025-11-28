@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreditkalkulator</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="oldal-cim">
+        <h1>Kredit kalkulátor</h1>
+    </div>
+    <div class="adat-bekeres">
+        <label>Első jegy</label>
+        <input type="text" class="elsojegy" placeholder="Jegy"/>
+        
+        <input type="text" class="elsokredit" placeholder="Kredit"/>
+        <br />
+        <label>Második jegy</label>
+        <input type="text" class="masodikjegy" placeholder="Jegy"/>
+        
+        <input type="text" class="masodikkredit" placeholder="Kredit"/>
+        <br />
+        <label>Harmadik jegy</label>
+        <input type="text" class="harmadikjegy" placeholder="Jegy"/>
+        
+        <input type="text" class="harmadikkredit" placeholder="Kredit"/>
+        <br />
+        <button onclick="szamol()">Számolás</button>
+    </div>
+    <div class="eredmeny"></div>
+    <footer>
+        <div>Készitette:Bakos Bendegúz</div>
+    </footer>
+    
+    <script>
+        function szamol(){
+            const jegy1 =   Number(document.querySelector('.elsojegy').value)
+            const jegy2 =   Number(document.querySelector('.masodikjegy').value)
+            const jegy3 =   Number(document.querySelector('.harmadikjegy').value)
+            const kredit1 = Number(document.querySelector('.elsokredit').value)
+            const kredit2 = Number(document.querySelector('.masodikkredit').value)
+            const kredit3 = Number(document.querySelector('.harmadikkredit').value)
+            let jegyveg = ((jegy1*kredit1) + (jegy2*kredit2) + (jegy3*kredit3)) / (kredit1+kredit2+kredit3)
+            if (jegy1==""||jegy2==""||jegy3==""||kredit1==""||kredit2==""||kredit3==""){
+                document.querySelector('.eredmeny').innerHTML="<p>Hiba! Nem írtad be az összes jegyet</p>"
+            }else{
+                document.querySelector('.eredmeny').innerHTML=`<p>A megadott jegyeknek a sülyozott átlaga:"${jegyveg}"</p>`
+            }
+        }
+       
+    </script>
+</body>
+</html>
